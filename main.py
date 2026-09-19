@@ -125,7 +125,7 @@ class Avni:
                 self.set_state("SPEAKING")
 
                 self.voice.speak(
-                    "ok, byyee. Apna dhyaan   rakhna"
+                    "ok, bye. Apna dhyaan rakhna"
                 )
 
                 self.active = False
