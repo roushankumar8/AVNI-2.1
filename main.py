@@ -5,6 +5,7 @@ import speech_recognition as sr
 from dashboard import Dashboard
 from voice import VoiceEngine
 from gemini_brain import GeminiBrain
+from actions import ActionManager
 
 
 class Avni:
@@ -14,6 +15,7 @@ class Avni:
         self.dashboard = Dashboard()
         self.voice = VoiceEngine()
         self.brain = GeminiBrain()
+        self.actions = ActionManager()
 
         self.running = True
         self.active = False
@@ -148,6 +150,31 @@ class Avni:
             self.set_state("THINKING")
 
             print(
+                "Checking local action:",
+                command
+            )
+
+            action_response = self.actions.execute(command)
+
+            if action_response:
+
+                print(
+                    "Action executed:",
+                    action_response
+                )
+
+                self.set_state("SPEAKING")
+
+                self.voice.speak(
+                    action_response
+                )
+
+                self.set_state("IDLE")
+
+                continue
+
+
+            print(
                 "Sending to Gemini:",
                 command
             )
@@ -181,8 +208,6 @@ class Avni:
                 )
 
                 self.set_state("IDLE")
-
-        print("\nAVNI stopped.")
 
     # =========================================================
     # RUN DASHBOARD
