@@ -17,7 +17,7 @@ class Dashboard:
         # ============================================================
         self.root = tk.Tk()
         self.root.title("AVNI 2.1")
-        self.root.geometry("1500x900")
+        self.root.geometry("900x700")
         self.root.minsize(1150, 720)
         self.root.configure(bg="#020617")
 
