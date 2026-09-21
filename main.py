@@ -67,7 +67,7 @@ class Avni:
                 self.set_state("SPEAKING")
 
                 self.voice.speak(
-                    "Helllooo Roushan… Kya hua? Abhi achanak se   meri yaad kaise aa gai?.. Aaj kaa din kaisa ja raha hai   tumhaarraa?"
+                    "Hello Roushan… mai tumhari kaise madad kar sakti hun?"
                 )
 
                 self.set_state("IDLE")
@@ -125,7 +125,7 @@ class Avni:
                 self.set_state("SPEAKING")
 
                 self.voice.speak(
-                    "ok, bye. Apna dhyaan rakhna"
+                    "ok, bay. Apna dhyaan rakhna"
                 )
 
                 self.active = False

@@ -74,7 +74,6 @@ class Dashboard:
 
         self.create_greeting()
         self.create_status()
-        self.create_hologram()
         self.create_clock()
         self.create_quick_actions()
         self.create_message_panel()
@@ -130,7 +129,7 @@ class Dashboard:
         # Center title
         tk.Label(
             self.header,
-            text="ARTIFICIAL VIRTUAL NEURAL INTELLIGENCE",
+            text="AUTONOMOUS VOICE NEURAL INTELLIGENCE",
             font=("Segoe UI", 12, "bold"),
             fg=self.subtext,
             bg=self.bg2
@@ -263,7 +262,7 @@ class Dashboard:
 
         tk.Label(
             card,
-            text="WELCOME BACK",
+            text="WELCOME",
             font=("Segoe UI", 9, "bold"),
             fg=self.cyan,
             bg=self.panel
@@ -799,42 +798,6 @@ class Dashboard:
                 py + 4,
                 fill=self.cyan,
                 outline=""
-            )
-
-        # ------------------------------------------------------------
-        # Hologram image
-        # ------------------------------------------------------------
-        if self.hologram_image:
-            try:
-                max_size = int(min(width, height) * 1.30)
-
-                image = self.hologram_image.copy()
-                image.thumbnail(
-                    (max_size, max_size),
-                    Image.Resampling.LANCZOS
-                )
-
-                self.hologram_photo = ImageTk.PhotoImage(image)
-
-                canvas.create_image(
-                    cx,
-                    cy,
-                    image=self.hologram_photo,
-                    anchor="center"
-                )
-
-            except Exception:
-                self.draw_fallback_hologram(
-                    canvas,
-                    cx,
-                    cy
-                )
-
-        else:
-            self.draw_fallback_hologram(
-                canvas,
-                cx,
-                cy
             )
 
         # ------------------------------------------------------------
