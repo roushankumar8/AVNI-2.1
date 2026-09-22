@@ -344,7 +344,8 @@ class ActionManager:
         if any(x in text for x in [
             "youtube",
             "you tube",
-            "यूट्यूब"
+            "यूट्यूब",
+            "युटुब"
         ]):
 
             self.open_url(
